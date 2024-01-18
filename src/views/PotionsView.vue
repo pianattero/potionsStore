@@ -8,10 +8,6 @@
             :potions="item"
             />
         </div>
-        <div>
-            <button>Prev</button>
-            <button>Next</button>
-        </div>
     </div>
 </template>
 
@@ -32,21 +28,18 @@ onMounted(() => {
     potionsStore.getPotions();
     setTimeout(() => {
         loading.value = false
+
     }, 2000)
 })
 
 //DATA
+const cardsOnPage = ref(10 as Number)
+const start = ref(0 as Number);
+const end = ref(cardsOnPage)
 
-let postOnPage: number = 10
-let start: number = 0;
-let end = postOnPage
-
-const data = potionsStore.potionsArr.slice(start, end)
+const data = potionsStore.potionsArr
 
 const loading = ref(true)
-
-
-
 
 </script>
 
