@@ -1,6 +1,6 @@
 <template>
     <header>
-        <RouterLink to="/home"> <img src="../../public/logo.png" alt="Logo" class="logo"/> </RouterLink>
+        <RouterLink to="/home"> <img src="/logo.png" alt="Logo" class="logo"/> </RouterLink>
         <nav class="nav-links">
           <RouterLink class="link" to="/home">Home</RouterLink>
           <RouterLink class="link" to="/potions">Potions</RouterLink>

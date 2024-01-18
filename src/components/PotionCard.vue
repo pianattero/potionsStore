@@ -1,20 +1,27 @@
 <template>
     <div class="card-container">
-        <h2 class="card-title">· Ageing Potion ·</h2>
-        <img src="https://static.wikia.nocookie.net/harrypotter/images/5/51/Ageing_Potion_PM.png" alt=""/>
-        <p>Aged drinker temporarily</p>
-        <p>Characteristics: Green</p>
-        <div class="card-info">
-            <div>
-                <p>Ingredients:</p>
-                <ul>
-                    <li v-for="ingredient in ingredients">{{ ingredient }}</li>
-                </ul>
+        <div>
+            <div class="card-info-1">
+                <h2 class="card-title">· {{ potions?.attributes.name }} ·</h2>
+                <img :src='potions?.attributes?.image || "/missing_img.png"' />
+                <p>{{ potions?.attributes.effect || missingInfoMSG}} </p>
+                <hr>
+                <p>Characteristics: {{ potions?.attributes?.characteristics || missingInfoMSG }}</p>
             </div>
-            <div>
-                <p>Difficulty: <br> Advanced</p>
+    
+            <div class="card-info-2">
+                <div v-if="ingredients" >
+                    <p>Ingredients:</p>
+                    <ul>
+                        <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+                    </ul>
+                </div>
+                <div v-if="potions?.attributes?.difficulty">
+                    <p>Difficulty: <br> {{ potions?.attributes?.difficulty || missingInfoMSG }}</p>
+                </div>
             </div>
         </div>
+
         <div class="card-btn">
             <button class="button-55">I want it!</button>
         </div>
@@ -22,7 +29,22 @@
 </template>
 
 <script setup lang="ts">
-const ingredients = 'Newt spleens, Bananas, An orange snake, A green leaf'.split(',')
+//IMPORTS
+import { type PotionData } from '@/types/potions.types';
+import type { PropType } from 'vue';
+
+
+//PROPS
+const props = defineProps({
+    potions: {
+        type: Object as PropType<PotionData>
+    }
+});
+
+//DATA
+const ingredients = props.potions?.attributes.ingredients?.split(',')
+const missingInfoMSG = "We don't count with that information yet, stay tuned!"
+
 
 </script>
 
@@ -31,7 +53,7 @@ const ingredients = 'Newt spleens, Bananas, An orange snake, A green leaf'.split
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 350px;
     border: 3px black double;
     border-radius: 4px;
@@ -43,7 +65,21 @@ const ingredients = 'Newt spleens, Bananas, An orange snake, A green leaf'.split
         text-align: center;
     }
 
-    .card-info {
+    .card-info-1 {
+        text-align: center;
+        margin: 10px;
+
+        img {
+            height: 120px;
+            margin: 10px 0;
+        }
+
+        p {
+            padding: 5px 0;
+        }
+    }
+
+    .card-info-2 {
         display: flex;
         width: 100%;
         align-items: center;
@@ -55,7 +91,7 @@ const ingredients = 'Newt spleens, Bananas, An orange snake, A green leaf'.split
     }
 
     .card-btn {
-        margin: 5px;
+        margin: 20px;
 
         .button-55 {
             align-self: center;
