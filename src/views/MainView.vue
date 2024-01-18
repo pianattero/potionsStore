@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container">
         <Heather/>
-        <div class="container">
+        <div class="container-content">
             <RouterView />
         </div>
     </div>
@@ -15,11 +15,16 @@ import Heather from '@/components/Heather.vue';
 
 <style scoped lang="scss">
 .container {
-    display: flex;
-    width: 100%;
-    min-height: calc(100vh - 112.5px);
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    display: block;
+    position: relative;
+
+    .container-content {
+        width: 100%;
+        height: calc(100vh - 112.5px);
+        position: fixed;
+        overflow: scroll;
+        bottom: 0;
+        left: 0;
+    }
 }
 </style>
