@@ -34,7 +34,7 @@
 //IMPORTS
 import type { PropType } from 'vue';
 import { type PotionData } from '@/types/potions.types';
-import Button from '../Button.vue'
+import Button from '../core/Button.vue'
 
 
 //PROPS

@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import PotionsViewVue from '@/views/PotionsView.vue' 
 import MainViewVue from '@/views/MainView.vue'
 import SpellsViewVue from '@/views/SpellsView.vue'
-import PageNotFound from '@/components/PageNotFound.vue'
+import PageNotFound from '@/components/core//PageNotFound.vue'
 
 const routes = [
   {
