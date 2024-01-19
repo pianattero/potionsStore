@@ -1,4 +1,4 @@
-<template>
+k<template>
     <Loader v-if="loading" />
     <div v-else>
         <h1>SPELLS</h1>
@@ -25,7 +25,6 @@ onMounted(() => {
     spellsStore.getSpells()
     setTimeout(() => {
         loading.value = false
-        console.log(data)
     }, 2000);
 });
 
