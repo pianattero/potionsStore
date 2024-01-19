@@ -4,7 +4,7 @@
         <h1>POTIONS</h1>
         <div class="container-cards">
             <PotionCard
-            v-for="item in data"
+            v-for="item in potionsStore.potionsArr"
             :potions="item"
             />
         </div>
@@ -28,17 +28,10 @@ onMounted(() => {
     potionsStore.getPotions();
     setTimeout(() => {
         loading.value = false
-
     }, 2000)
 })
 
 //DATA
-const cardsOnPage = ref(10 as Number)
-const start = ref(0 as Number);
-const end = ref(cardsOnPage)
-
-const data = potionsStore.potionsArr
-
 const loading = ref(true)
 
 </script>

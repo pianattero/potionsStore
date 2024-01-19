@@ -3,7 +3,7 @@ k<template>
     <div v-else>
         <h1>SPELLS</h1>
         <SpellsCard
-        v-for="item in data"
+        v-for="item in spellsStore.spellsArr"
         :spells="item"
         />
     </div>
@@ -30,7 +30,7 @@ onMounted(() => {
 
 //DATA
 const loading = ref(true)
-const data = spellsStore.spellsArr
+
 </script>
 
 <style scoped lang="scss">
