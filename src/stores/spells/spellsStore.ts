@@ -18,7 +18,7 @@ export const useSpellStore = defineStore({
                 .getSpells()
                 .then((res: any) => {
                     if (res && res.data) {
-                        this.spellsArr = res.data
+                        this.spellsArr = res.data.data
                         return this.spellsArr
                     }
                 })

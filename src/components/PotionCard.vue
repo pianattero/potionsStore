@@ -3,7 +3,7 @@
         <div>
             <div class="card-info-1">
                 <h2 class="card-title">· {{ potions?.attributes.name }} ·</h2>
-                <img :src='potions?.attributes?.image || "/missing_img.png"' />
+                <img :src='potions?.attributes?.image || "/missing_potion.png"' />
                 <p>{{ potions?.attributes.effect || missingInfoMSG}} </p>
                 <hr>
                 <p>Characteristics: {{ potions?.attributes?.characteristics || missingInfoMSG }}</p>
@@ -30,8 +30,8 @@
 
 <script setup lang="ts">
 //IMPORTS
-import { type PotionData } from '@/types/potions.types';
 import type { PropType } from 'vue';
+import { type PotionData } from '@/types/potions.types';
 
 
 //PROPS
