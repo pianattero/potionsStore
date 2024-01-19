@@ -16,7 +16,7 @@
 import { onMounted } from 'vue';
 import { ref } from 'vue';
 
-import PotionCard from '../components/PotionCard.vue'
+import PotionCard from '../components/cards/PotionCard.vue'
 import Loader from '../components/Loader.vue'
 import { usePotionsStore } from '../stores/potions/potionsStore';
 

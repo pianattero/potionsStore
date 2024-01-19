@@ -14,7 +14,7 @@
 import { onMounted, ref } from 'vue';
 
 import { useSpellStore } from '../stores/spells/spellsStore';
-import SpellsCard from '@/components/SpellsCard.vue'
+import SpellsCard from '@/components/cards/SpellsCard.vue'
 import Loader from '@/components/Loader.vue';
 
 //STORES

@@ -4,8 +4,14 @@ import HomeView from '../views/HomeView.vue'
 import PotionsViewVue from '@/views/PotionsView.vue' 
 import MainViewVue from '@/views/MainView.vue'
 import SpellsViewVue from '@/views/SpellsView.vue'
+import PageNotFound from '@/components/PageNotFound.vue'
 
 const routes = [
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: PageNotFound,
+  },
   {
     path: '',
     component: MainViewVue,
