@@ -2,6 +2,7 @@
     <Loader v-if="loading" />
     <div v-else class="container">
         <h1>POTIONS</h1>
+        
         <div class="container-cards">
             <PotionCard
             v-for="item in potionsStore.potionsArr"
@@ -16,8 +17,8 @@
 import { onMounted } from 'vue';
 import { ref } from 'vue';
 
-import PotionCard from '../components/cards/PotionCard.vue'
-import Loader from '../components/Loader.vue'
+import PotionCard from '@/components/cards/PotionCard.vue'
+import Loader from '@/components/Loader.vue'
 import { usePotionsStore } from '../stores/potions/potionsStore';
 
 //STORES
@@ -48,6 +49,11 @@ const loading = ref(true)
         flex-wrap: wrap;
         justify-content: center;
     }
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 </style>

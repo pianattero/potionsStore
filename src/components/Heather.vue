@@ -5,6 +5,8 @@
           <RouterLink class="link" to="/home">Home</RouterLink>
           <RouterLink class="link" to="/potions">Potions</RouterLink>
           <RouterLink class="link" to="/spells">Spells's Guide</RouterLink>
+          <RouterLink class="link" to="/cart">                <img class="logo-repsol" src="../assets/cart.svg"  />
+</RouterLink>
         </nav>
     </header>
 </template>
@@ -26,6 +28,11 @@ header {
     padding: 25px 40px;
     background-color: rgba(20, 19, 19, 0.661);
 
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
     .logo {
         width: 50px;
     }
@@ -35,7 +42,9 @@ header {
         color: whitesmoke;
     }
 
-
+    .cart-icon {
+        width: 20px;
+    }
 
 }
 </style>

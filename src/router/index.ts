@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import PageNotFound from '@/components/core//PageNotFound.vue'
 import HomeView from '../views/HomeView.vue'
 import PotionsViewVue from '@/views/PotionsView.vue' 
 import MainViewVue from '@/views/MainView.vue'
 import SpellsViewVue from '@/views/SpellsView.vue'
-import PageNotFound from '@/components/core//PageNotFound.vue'
+import CartViewVue from '@/views/CartView.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
         path: '/spells',
         name: 'spells',
         component: SpellsViewVue
+      },
+      {
+        path: '/cart',
+        name: 'cart',
+        component: CartViewVue
       }
     ]
   }
