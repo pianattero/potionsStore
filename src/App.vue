@@ -2,10 +2,15 @@
   <RouterView />
 </template>
 
-  <script setup lang="ts">
-  //IMPORTS
-  import { RouterView } from 'vue-router'
-  </script>
+<script setup lang="ts">
+//IMPORTS
+import { RouterView } from "vue-router";
+</script>
 
-<style scoped>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 </style>
