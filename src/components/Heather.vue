@@ -46,6 +46,7 @@ header {
     top: 0;
     left: 0;
     padding: 25px 40px;
+    // background-color: $c-yellow-green;
     background-color: rgba(20, 19, 19, 0.661);
     z-index: 1;
 
@@ -55,7 +56,7 @@ header {
         display: none;
         background-color: none;
 
-        @include media(){
+        @include media-720(){
             display: block
         }
     }
@@ -65,7 +66,7 @@ header {
             }
 
     .nav {
-        @include media(){
+        @include media-720(){
             width: 100%;
             opacity: 0;
             height: 0vh;
@@ -87,7 +88,7 @@ header {
 
             @include flex(row, wrap, flex-end, center);
 
-            @include media(){
+            @include media-720(){
                 @include flex(column, nowrap, center, center)
                 }
         
@@ -95,7 +96,7 @@ header {
                 margin: 0 10px;
                 color: whitesmoke;
         
-                @include media(){
+                @include media-720(){
                     margin: 10px 0;
                 }
 
@@ -109,7 +110,5 @@ header {
             }
         }
     }
-
-
 }
 </style>

@@ -38,16 +38,12 @@ const loading = ref(true)
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column, nowrap, center, center);
 
     .container-cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        @include flex(row, wrap, center, none);
     }
     .modal-content {
         display: flex;

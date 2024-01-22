@@ -23,10 +23,10 @@ const back = () => {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
+
     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column, nowrap, center, center);
 
         h1 {
             margin: 20px 0;

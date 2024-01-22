@@ -40,10 +40,10 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
+
     .cart-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(row, nowrap, space-between, center);
         margin: 10px;
         padding: 10px;
         border: 2px black solid;

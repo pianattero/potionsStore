@@ -5,8 +5,14 @@
     align-items: $align;
 }
 
-@mixin media(){
+@mixin media-720(){
     @media screen and (max-width:720px) {
+        @content
+    }
+}
+
+@mixin media-670(){
+    @media screen and (max-width:670px) {
         @content
     }
 }

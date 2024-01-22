@@ -27,14 +27,23 @@ const missingInfoMSG = "We don't count with that information yet, stay tuned!"
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
 
 .card-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     margin: 15px;
     border: 2px black double;
+
+    @include flex(row, nowrap, space-between, center);
+
+    @include media-670(){
+        @include flex(column, nowrap, center, center);
+        text-align: center;
+        
+        .card-info h1, h3, p{
+            margin: 10px 0;
+        }
+    }
 
     .card-info {
         margin-right: 20px;

@@ -109,11 +109,10 @@ const toggleModal = () => {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
+
 .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
+    @include flex(column, nowrap, space-between, space-evenly);
     width: 350px;
     border: 3px black double;
     border-radius: 4px;
@@ -151,10 +150,8 @@ const toggleModal = () => {
     }
 
     .card-info-2 {
-        display: flex;
+        @include flex(row, nowrap, space-evenly, center);
         width: 100%;
-        align-items: center;
-        justify-content: space-evenly;
 
         div {
             margin: 5px;
@@ -162,9 +159,7 @@ const toggleModal = () => {
     }
 
     .card-btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column, nowrap, center, center);
     
         p {
             margin: 0 5px;

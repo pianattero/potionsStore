@@ -6,12 +6,10 @@
 </template>
 
 <style scoped lang="scss">
+@import '@/styles/_mixins.scss';
 
     .loader-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        @include flex(column, nowrap, center, center);
         margin-top: 50px;
         .loader {
         width: 48px;

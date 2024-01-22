@@ -20,7 +20,6 @@ import Heather from '@/components/Heather.vue';
 
     .container-content {
         width: 100%;
-        height: calc(100vh - 112.5px);
         position: fixed;
         overflow: scroll;
         bottom: 0;
