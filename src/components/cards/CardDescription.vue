@@ -1,30 +1,31 @@
 <template>
-    <div class="card-description">
-        <h4>{{ props.title }}</h4>
-        <span>{{ props.description }}</span>
-        <hr>
-    </div>
+  <div class="card-description">
+    <h4>{{ props.title }}</h4>
+    <span>{{ props.description }}</span>
+    <hr />
+  </div>
 </template>
 
 <script setup lang="ts">
+//PROPS
 const props = defineProps({
-    title: {
+  title: {
     type: String,
-    },
-    description: {
+  },
+  description: {
     type: String,
-    default: 'Not information found.'
-    },
- });
+    default: "Not information found.",
+  },
+});
 </script>
 
 <style scoped lang="scss">
-    .card-description {
-        text-align: center;
-        margin: 10px 0;
-        padding: 5px;
-        h4 {
-            font-weight: bold;
-        }
-    }
+.card-description {
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+  h4 {
+    font-weight: bold;
+  }
+}
 </style>
