@@ -51,23 +51,18 @@
     </div>
 
     <div class="card-btn">
-      <div class="card-btn-1">
-        <Button @click="decreaseAmount" :text="'-'" :disabled="amount === 0" />
-        <p>{{ amount }}</p>
-        <Button @click="increaseAmount" :text="'+'" :disabled="amount === 10" />
-      </div>
-      <div class="card-btn-2">
-        <Button
-          :text="'More info'"
-          @click="toggleModal"
-          :disabled="modalActive"
-        />
-
-        <button @click="addFav(potions)" :disabled="findFav(potions!.id)">
-          <img v-if="findFav(potions!.id)" src="@/assets/fav-black-full.svg" />
-          <img v-else src="@/assets/fav-black.svg" />
-        </button>
-      </div>
+      <button @click="addFav(potions)" :disabled="findFav(potions!.id)">
+        <img v-if="findFav(potions!.id)" src="@/assets/fav-selected.svg" />
+        <img v-else src="@/assets/fav-select.svg" />
+      </button>
+      <Button
+        :text="'More info'"
+        @click="toggleModal"
+        :disabled="modalActive"
+      />
+      <button>
+        <img src="@/assets/cart-add.svg" />
+      </button>
     </div>
   </div>
 </template>
@@ -98,16 +93,9 @@ const props = defineProps({
 //DATA
 const ingredients = props.potions?.attributes.ingredients?.split(",");
 const missingInfoMSG = "No information found.";
-const amount = ref(0);
 const modalActive = ref(false);
 
 //METHOD
-const increaseAmount = () => {
-  amount.value++;
-};
-const decreaseAmount = () => {
-  amount.value--;
-};
 const toggleModal = () => {
   modalActive.value = !modalActive.value;
 };
@@ -118,11 +106,11 @@ const toggleModal = () => {
 
 .card-container {
   @include flex(column, nowrap, space-between, space-evenly);
-  width: 350px;
-  border: 3px black double;
+  width: 25rem;
+  border: 0.3rem black double;
   border-radius: 4px;
   padding: 20px;
-  margin: 15px;
+  margin: 0 1rem 2rem;
 
   .modal-content {
     h3 {
@@ -163,26 +151,13 @@ const toggleModal = () => {
   }
 
   .card-btn {
-    @include flex(column, nowrap, center, center);
+    @include flex(row, nowrap, center, center);
+    margin-top: 2rem;
 
-    p {
-      margin: 0 5px;
-    }
-
-    .card-btn-1 {
-      @include flex(row, nowrap, none, center);
-      margin: 10px 0 20px;
-    }
-
-    .card-btn-2 {
-      @include flex(row, nowrap, no, center);
-
-      button {
-        margin: 0 10px;
-        background-color: transparent;
-      }
+    button {
+      margin: 0 10px;
+      background-color: transparent;
     }
   }
 }
 </style>
-@/stores/favorites/favorites

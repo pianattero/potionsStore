@@ -1,19 +1,21 @@
 import { defineStore } from "pinia";
+import type { PotionData } from "@/types/potions.types";
 
 export const useCartStore = defineStore({
-    id: 'cart',
-    state: () => ({
-      amount: 0,
-    }),
-    getters: {
-    
+  id: "cart",
+  state: () => ({
+    cart: [] as PotionData[],
+  }),
+  getters: {},
+  actions: {
+    addToCart(potion: any) {
+      this.cart.push(potion);
+      return this.cart;
     },
-    actions: {
-      increment() {
-        this.amount++;
-      },
-      decrease() {
-        this.amount--;
-      },
+    removeOfCart(id: string) {
+      this.cart = this.cart.filter((item) => item.id !== id);
+      return this.cart;
     },
+  },
+  persist: true,
 });

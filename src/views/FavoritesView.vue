@@ -1,6 +1,6 @@
 <template>
-  <h1>Favorites</h1>
   <div class="container">
+    <h1>Favorites</h1>
     <p v-if="favorites.length === 0">No favorites</p>
     <div v-else class="container-list">
       <div
@@ -33,6 +33,11 @@ const { favorites } = storeToRefs(favoritesStore);
 @import "@/styles/_mixins.scss";
 
 .container {
+  h1 {
+    margin-bottom: $margin-bottom-title;
+    margin-top: $margin-top-title;
+    text-align: center;
+  }
   .container-list {
     width: 100%;
     text-align: left;

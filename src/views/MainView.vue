@@ -20,7 +20,7 @@ import Heather from "@/components/Heather.vue";
 
   .container-content {
     width: 100%;
-    height: calc(100vh - 104.5px);
+    height: calc(100vh - $header-height);
     background-color: $c-magnolia;
     color: $c-raisin-black;
     position: fixed;
