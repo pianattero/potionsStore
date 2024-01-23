@@ -8,21 +8,16 @@
     </button>
     <nav class="nav" :class="{ active: isActive }">
       <div class="nav-links">
-        <RouterLink @click="toggleMenuLink" class="link" to="/home"
-          >Home</RouterLink
+        <RouterLink
+          v-for="(link, index) in links"
+          :key="index"
+          class="link"
+          :to="link.route"
+          @click="toggleMenuLink"
         >
-        <RouterLink @click="toggleMenuLink" class="link" to="/potions"
-          >Potions</RouterLink
-        >
-        <RouterLink @click="toggleMenuLink" class="link" to="/spells"
-          >Spells's Guide</RouterLink
-        >
-        <RouterLink @click="toggleMenuLink" class="link" to="/cart"
-          ><img class="logo-repsol" src="../assets/cart.svg"
-        /></RouterLink>
-        <RouterLink @click="toggleMenuLink" class="link" to="/favorites"
-          ><img class="logo-repsol" src="../assets/fav-white.svg"
-        /></RouterLink>
+          {{ link.name }}
+          <img v-show="link.icon" :src="link.icon" />
+        </RouterLink>
       </div>
     </nav>
   </header>
@@ -32,9 +27,33 @@
 //IMPORTS
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
+import type { linkRouter } from "@/types/menu.types";
 
 //DATA
 const isActive = ref(false);
+
+const links: linkRouter[] = [
+  {
+    name: "Home",
+    route: "/home",
+  },
+  {
+    name: "Potions",
+    route: "/potions",
+  },
+  {
+    name: "Spells",
+    route: "/spells",
+  },
+  {
+    icon: "/src/assets/cart.svg",
+    route: "/cart",
+  },
+  {
+    icon: "/src/assets/fav-white.svg",
+    route: "/favorites",
+  },
+];
 
 //METHODS
 const toggleMenu = () => {

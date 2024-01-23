@@ -36,6 +36,12 @@ const loading = ref(true);
 .container {
   @include flex(column, nowrap, center, center);
 
+  h1 {
+    margin-bottom: $margin-bottom-title;
+    margin-top: $margin-top-title;
+    text-align: center;
+  }
+
   .container-cards {
     @include flex(row, wrap, center, none);
   }

@@ -1,7 +1,7 @@
 k
 <template>
   <Loader v-if="loading" />
-  <div v-else>
+  <div v-else class="container">
     <h1>SPELLS</h1>
     <SpellsCard v-for="item in spellsStore.spellsArr" :spells="item" />
   </div>
@@ -29,4 +29,12 @@ onMounted(() => {
 const loading = ref(true);
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  h1 {
+    margin-bottom: $margin-bottom-title;
+    margin-top: $margin-top-title;
+    text-align: center;
+  }
+}
+</style>

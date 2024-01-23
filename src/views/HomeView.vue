@@ -44,7 +44,7 @@ const spellsPg = () => {
 
 .home-container {
   @include flex(column, nowrap, center, center);
-  height: calc(100vh - 104.5px);
+  height: calc(100vh - $header-height);
   background: linear-gradient(
       rgba(255, 255, 255, 0.335),
       rgba(255, 255, 255, 0.677)
