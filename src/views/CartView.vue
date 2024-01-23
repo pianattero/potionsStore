@@ -40,6 +40,10 @@ const { cart } = storeToRefs(cartStore)
     width: 100%;
     margin: 0 1rem;
 
+    @include media-670(){
+      margin: 0;
+    }
+
     .cart-info {
       @include flex(row, nowrap, space-between, center);
       width: 70%;
