@@ -30,8 +30,9 @@ const missingInfoMSG = "We don't count with that information yet, stay tuned!";
 
 .card-container {
   padding: 10px;
-  margin: 0 15px;
-  border: 2px black double;
+  margin: 0 1rem 1rem;
+  border: $border;
+  border-radius: $border-radius;
 
   @include flex(row, nowrap, space-between, center);
 
@@ -42,16 +43,16 @@ const missingInfoMSG = "We don't count with that information yet, stay tuned!";
     .card-info h1,
     h3,
     p {
-      margin: 10px 0;
+      margin: 1rem 0;
     }
   }
 
   .card-info {
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 
   img {
-    width: 200px;
+    width: 12rem;
   }
 }
 </style>

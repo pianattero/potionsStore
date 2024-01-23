@@ -9,10 +9,12 @@
         :key="favorite.id"
       >
         <h2>{{ favorite?.attributes?.name }}</h2>
-        <Button
-          :text="'Remove'"
-          @click="favoritesStore.removeFav(favorite.id)"
-        />
+        <div>
+          <Button
+            :text="'Remove'"
+            @click="favoritesStore.removeFav(favorite.id)"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -45,8 +47,19 @@ const { favorites } = storeToRefs(favoritesStore);
 
     .container-list-fav {
       @include flex(row, nowrap, space-between, center);
+      border: $border;
+      border-radius: $border-radius;
       width: 70%;
-      margin: 10px 0;
+      margin: 0 1rem 1rem;
+      padding: 0.7rem;
+
+      @include media-670(){
+        @include flex(column, nowrap, center, center);
+
+        h2 {
+          margin-bottom: 0.5rem;
+        }
+      }
     }
   }
 }

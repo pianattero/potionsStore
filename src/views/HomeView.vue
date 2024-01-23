@@ -44,10 +44,10 @@ const spellsPg = () => {
 
 .home-container {
   @include flex(column, nowrap, center, center);
-  height: calc(100vh - $header-height);
+  min-height: calc(100vh - $header-height);
   background: linear-gradient(
-      rgba(255, 255, 255, 0.335),
-      rgba(255, 255, 255, 0.677)
+      rgba(12, 12, 12, 0.473),
+      rgba(0, 0, 0, 0.267)
     ),
     url("/bg.jpeg");
   background-position: center;
@@ -59,6 +59,8 @@ const spellsPg = () => {
   h1,
   p {
     padding: 10px;
+    color: $c-magnolia;
+    margin: 0 2rem
   }
 
   .home-btns {

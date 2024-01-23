@@ -16,6 +16,13 @@ export const useCartStore = defineStore({
       this.cart = this.cart.filter((item) => item.id !== id);
       return this.cart;
     },
+    findInCart(id: string) {
+      if (this.cart.find((item) => item.id === id)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   persist: true,
 });
